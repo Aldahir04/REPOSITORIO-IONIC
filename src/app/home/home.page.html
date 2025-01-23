@@ -1,20 +1,82 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
-      Blank
+      Inicio
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  <ion-list class="custom-list">
+    <ion-item class="custom-item" routerLink="/desarrollo">
+      <ion-icon slot="start" name="code-outline"></ion-icon>
+      <ion-label>DESARROLLO DE SOFTWARE</ion-label>
+    </ion-item>
+    <ion-item class="custom-item" routerLink="/base">
+      <ion-icon slot="start" name="server-outline"></ion-icon>
+      <ion-label>BASE DE DATOS</ion-label>
+    </ion-item>
+    <ion-item class="custom-item" routerLink="/iot">
+      <ion-icon slot="start" name="hardware-chip-outline"></ion-icon>
+      <ion-label>IOT</ion-label>
+    </ion-item>
+    <ion-item class="custom-item" routerLink="/ingles">
+      <ion-icon slot="start" name="language-outline"></ion-icon>
+      <ion-label>INGLÉS</ion-label>
+    </ion-item>
+    <ion-item class="custom-item" routerLink="/integradora">
+      <ion-icon slot="start" name="people-outline"></ion-icon>
+      <ion-label>INTEGRADORA</ion-label>
+    </ion-item>
+  </ion-list>
 </ion-content>
+
+<style>
+  /* Estilo para el listado */
+  .custom-list {
+    padding: 15px;
+    border-radius: 10px;
+  }
+
+  /* Estilo para cada elemento */
+  .custom-item {
+    --background: var(--ion-item-background);
+    --border-radius: 8px;
+    --ion-item-background: var(--ion-background-color);
+    margin: 5px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Iconos */
+  .custom-item ion-icon {
+    color: var(--ion-color-primary); /* Usa el color primario definido en el tema */
+    font-size: 24px;
+  }
+
+  /* Texto */
+  .custom-item ion-label {
+    font-weight: bold;
+    color: var(--ion-text-color); /* Cambia automáticamente con el modo */
+  }
+
+  /* Hover para Light y Dark Mode */
+  .custom-item:hover {
+    --background: var(--ion-color-light-shade);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Modo Oscuro: Variables y ajustes adicionales */
+  @media (prefers-color-scheme: dark) {
+    .custom-list {
+      --ion-background-color: #1e1e1e;
+      --ion-item-background: #2c2c2c;
+      --ion-text-color: #ffffff;
+    }
+
+    .custom-item:hover {
+      --background: var(--ion-color-dark-shade);
+      box-shadow: 0 4px 6px rgba(255, 255, 255, 0.1);
+    }
+  }
+</style>
